@@ -1,0 +1,30 @@
+<div class="container" id="content" ng-controller="home_controller">
+	<div class="spin" ng-show="spinner.spinning"></div>
+	<div class="jumbotron">
+		<h2><timer start-time="1300000000000">{{ days }} dia{{ daysS }}, {{ hours }} hora{{ hoursS }}, {{ minutes }} minuto{{ minutesS }} e {{ seconds }} segundo{{ secondsS }}</timer></h2>
+		<h3>Para o nosso primeiro torneio!</h3>
+		<p>Garanta sua inscrição e seja o primeiro <strong>Rei do Mid</strong> de todos os tempos.. ÉÉOQQQQ?!<br/>
+		Ah, e não vai esquecer de mandar aquele "circo de soled" ou "é de plasma" no finalzinho do jogo, né?</p>
+		<p><a class="btn btn-primary btn-lg" href="">REALIZAR MINHA INSCRIÇÃO</a></p>
+	</div>
+
+	<h3>Inscritos para o torneio</h3>
+	<table class="table table-striped table-bordered">
+		<tr>
+			<th>Nome do invocador</th>
+			<th>Tier</th>
+			<th>Jogos</th>
+			<th>Vitórias</th>
+			<th>Derrotas</th>
+			<th>Pontos</th>
+		</tr>
+		<tr ng-repeat="summoner in data.summoners">
+			<td>{{ summoner.name }}</td>
+			<td>{{ summoner.tier }} {{ summoner.division }} ({{ summoner.lp }} lp)</td>
+			<td>{{ summoner.games }}</td>
+			<td>{{ summoner.wins }}</td>
+			<td>{{ summoner.games - summoner.wins }}</td>
+			<td>{{ summoner.points }}</td>
+		</tr>
+	</table>
+</div>

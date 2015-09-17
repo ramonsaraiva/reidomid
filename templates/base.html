@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="app">
+	<head>
+		<title>REI DO MID</title>
+
+		<link rel="stylesheet" href="bower_components/bootswatch-dist/css/bootstrap.min.css">
+
+		<link rel="stylesheet" href="css/main.css">
+
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/bootswatch-dist/js/bootstrap.min.js"></script>
+
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/angular-route/angular-route.min.js"></script>
+		<script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+		<script src="bower_components/angular-smart-table/dist/smart-table.min.js"></script>
+		<script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+		<script src="bower_components/momentjs/moment.js"></script>
+		<script src="bower_components/humanize-duration/humanize-duration.js"></script>
+		<script src="bower_components/angular-timer/dist/angular-timer.min.js"></script>
+
+		<script src="js/main.js"></script>
+		<script src="js/spin.min.js"></script>
+
+		<script src="app.js"></script>
+		<script src="controllers.js"></script>
+		<script src="services.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default" header>
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/#/">Rei do Mid</a>
+				</div>
+				<div id="navbar">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="/#/home/">Geral</a></li>
+						<li><a href="/#/">Campeonatos</a></li>
+						<li><a href="/#/">Rankings</a></li>
+					</ul>
+					<ul ng-cloak ng-show="currentUser() == null" class="nav navbar-nav navbar-right">
+						<li><a href="/#/cadastrar/">Cadastrar</a></li>
+						<li><a href="/#/entrar/">Entrar</a></li>
+					</ul>
+					<ul ng-cloak ng-show="currentUser() != null" class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><u>{{ currentUser().login }}</u> <span class="caret"></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="/#/configuracoes/">Minha conta</a>
+									<a ng-click="user_logout()">Sair</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div ng-view></div>
+	</body>
+</html>

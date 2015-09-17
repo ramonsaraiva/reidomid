@@ -1,0 +1,21 @@
+
+body
+{
+	background: url('../img/hrbg.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size:cover;
+}
+
+.jumbotron
+{
+	margin-top: 12px;
+}
+
+#content
+{
+	border-radius: 10px;
+	border: 2px solid #999;
+	background: #FFF;
+}
